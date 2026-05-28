@@ -1,0 +1,6 @@
+pandas
+numpy
+pyarrow
+tqdm
+statsmodels
+scipy
