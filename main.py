@@ -22,10 +22,10 @@ EMP_END = pd.Timestamp('2025-12-31 23:59:00')
 TOKENS_TO_EVALUATE = ['BTC', 'AVAX', 'BERA', 'KAITO']
 
 TOKEN_CONFIGS = {
-    'BTC':   {'entry_threshold': 3.5, 'max_entry_spread_bps': 6.0},
-    'AVAX':  {'entry_threshold': 4.0, 'max_entry_spread_bps': 12.0},
-    'BERA':  {'entry_threshold': 4.5, 'max_entry_spread_bps': 15.0},
-    'KAITO': {'entry_threshold': 4.0, 'max_entry_spread_bps': 20.0}
+    'BTC':   {'entry_threshold': 4.0, 'max_entry_spread_bps': 10.0},
+    'AVAX':  {'entry_threshold': 4.0, 'max_entry_spread_bps': 20.0},
+    'BERA':  {'entry_threshold': 4.0, 'max_entry_spread_bps': 10.0},
+    'KAITO': {'entry_threshold': 4.0, 'max_entry_spread_bps': 5.0}
 }
 
 FEES = {
