@@ -5,7 +5,7 @@ This repository contains the quantitative backtesting framework and statistical 
 
 ## Framework Overview & Core Logic
 
-The architecture simulates a market-neutral statistical arbitrage strategy, utilizing an Ornstein-Uhlenbeck (OU) process to model rolling spreads while actively neutralizing asynchronous funding mechanics.
+The architecture simulates a market-neutral statistical arbitrage strategy, utilizing an Ornstein-Uhlenbeck (OU) process to model rolling spreads while neutralizing funding mechanics.
 
 
 1. **Price Normalization (Funding-Adjusted Space)**
