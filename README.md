@@ -100,14 +100,25 @@ Note: The comprehensive hyperparameter sensitivity sweep (evaluating the strateg
 crypto-perpetual-arbitrage/
 ├── README.md                           # Project documentation and execution guide
 ├── arbitrage report.pdf                # Research report
-├── notebooks/                          # Modular research and execution environment
+├── main.py                             # Execution entry point
+├── requirements.txt                    # Python environment dependencies
+├── .gitignore.txt                      # Version control exclusion rules
+│
+├── src/                                # Core Quantitative Engine (Modular Python)
+│   ├── data_pipeline.py                # Data ingestion, normalization, and spread construction
+│   ├── statistical_eng.py              # Ornstein-Uhlenbeck (OU) model validation and statistical diagnostics
+│   └── backtest_eng.py                 # Chronological execution and microstructure risk routing
+│
+├── notebooks/                          # Interactive Research & Exploratory Environment
 │   ├── full backtest.ipynb             # Baseline engine validation and tear sheets
 │   ├── sensitivity test.ipynb          # Multi-dimensional hyperparameter optimization
-│   ├── [TOKEN] data cleaning...ipynb   # Ingestion and price normalization pipelines
-│   └── [TOKEN] statistical studies.ipynb # OU process and cointegration diagnostics
-└── data/                               # High-frequency order book and tick data
+│   ├── [TOKEN] data cleaning...ipynb   # Asset-specific data parsing workflows
+│   └── [TOKEN] statistical...ipynb     # Asset-specific statistical diagnostics
+│
+└── data/                               # High-Frequency Data & Execution Matrices
+    ├── funding_rate_history_*.csv      # Historical funding rate epochs (Global)
+    ├── instrument_spec_history.csv     # Exchange-specific derivative parameters
+    ├── *_TAGGED_MASTER.parquet         # Merged and normalized execution matrices (Git-ignored)
     └── *_bbo.csv                       # Level-1 Best Bid/Offer snapshots
-
-
 
 
