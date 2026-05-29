@@ -109,6 +109,5 @@ crypto-perpetual-arbitrage/
     └── *_bbo.csv                       # Level-1 Best Bid/Offer snapshots
 
 
----
 
 
