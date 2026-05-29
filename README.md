@@ -5,11 +5,11 @@ This repository contains the quantitative backtesting framework and statistical 
 
 ## Framework Overview & Core Logic
 
-The architecture simulates a market-neutral statistical arbitrage strategy, utilizing an Ornstein-Uhlenbeck (OU) process to model rolling spreads while actively neutralizing phantom liquidity and asynchronous funding mechanics.
+The architecture simulates a market-neutral statistical arbitrage strategy, utilizing an Ornstein-Uhlenbeck (OU) process to model rolling spreads while actively neutralizing asynchronous funding mechanics.
 
 
 1. **Price Normalization (Funding-Adjusted Space)**
-   * Strips funding rate accrual from raw contract prices to isolate pure price-space dislocations and ensure parity across asynchronous exchange mechanisms.
+   * Strips funding rate accrual from raw contract prices to isolate pure price-space dislocations and ensure parity across different exchanges.
 2. **Rolling Ex-Ante $s$-score (Signal Engine)**
    * Models the cross-exchange spread using an Ornstein-Uhlenbeck (OU) process, discretized via a 1440-minute rolling AR(1) regression. This generates dynamic, standardized $s$-scores completely free of look-ahead bias.
 3. **The Executable EV Gate (Entry Logic)**
@@ -22,7 +22,7 @@ The architecture simulates a market-neutral statistical arbitrage strategy, util
 
 ## Repository Directory Structure
 
-* `src/data_pipeline.py`: Ingests Tardis.dev BBO and funding data, handles asynchronous timestamp alignment, and structures the master evaluation matrices.
+* `src/data_pipeline.py`: Ingests Tardis.dev BBO and funding data, handles timestamp alignment, and structures the master evaluation matrices.
 * `src/statistical_eng.py`: Executes rolling Augmented Dickey-Fuller (ADF) tests for stationarity and fits the OU mean-reversion parameters.
 * `src/backtest_eng.py`: Event-driven state machine simulating taker-taker execution, transaction slippage, EV gating, and exit routing.
 * `src/evaluation.py`: Generates institutional performance arrays including Active Sharpe, Maximum Drawdown, Gain-to-Pain (G2P) ratio, and empirical win rates.
