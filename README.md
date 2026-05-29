@@ -92,7 +92,21 @@ hese are ideal for running individual components of the research pipeline:
   
 Note: The comprehensive hyperparameter sensitivity sweep (evaluating the strategy across varying $\sigma$ thresholds, $C_{max}$ illiquidity guards, and fee tiers) is computationally intensive and is available exclusively as a standalone research notebook.
 
+---
 
+## Repository Architecture
+
+```text
+crypto-perpetual-arbitrage/
+├── README.md                           # Project documentation and execution guide
+├── arbitrage report.pdf                # Final Capstone research paper
+├── notebooks/                          # Modular research and execution environment
+│   ├── full backtest.ipynb             # Baseline engine validation and tear sheets
+│   ├── sensitivity test.ipynb          # Multi-dimensional hyperparameter optimization
+│   ├── [TOKEN] data cleaning...ipynb   # Ingestion and price normalization pipelines
+│   └── [TOKEN] statistical studies.ipynb # OU process and cointegration diagnostics
+└── data/                               # High-frequency order book and tick data
+    └── *_bbo.csv                       # Level-1 Best Bid/Offer snapshots
 
 
 ---
