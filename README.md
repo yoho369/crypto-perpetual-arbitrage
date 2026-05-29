@@ -72,6 +72,29 @@ Run from your terminal:
 ```bash
 python main.py
 ```
+
+Running Statistical Diagnostics:
+If you wish to generate the full suite of statistical diagnostics (e.g., ADF stationarity tests, OU half-life calculations, and variance profiling) during the main run, please uncomment the following lines in the main script:
+
+```python
+# Step 2: Statistical Engineering
+stat_eng = StatModelEngine(df_master)
+stat_eng.execute_all_diagnostics()
+```
+### 4. Interactive Exploration (Standalone Notebooks)
+
+For modular execution, step-by-step code review, and deeper data exploration, we have provided standalone Jupyter Notebooks in the notebooks/ directory. T
+hese are ideal for running individual components of the research pipeline:
+* **Data Engineering:** `[TOKEN] data cleaning and master file construction.ipynb`
+* **Econometric Modeling:** `[TOKEN] statistical studies.ipynb`
+* **Baseline Engine Validation:** `full backtest.ipynb`
+* **Hyperparameter & Sensitivity Testing:** `sensitivity test.ipynb`
+  
+Note: The comprehensive hyperparameter sensitivity sweep (evaluating the strategy across varying $\sigma$ thresholds, $C_{max}$ illiquidity guards, and fee tiers) is computationally intensive and is available exclusively as a standalone research notebook.
+
+
+
+
 ---
 
 
