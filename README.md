@@ -99,7 +99,7 @@ Note: The comprehensive hyperparameter sensitivity sweep (evaluating the strateg
 ```text
 crypto-perpetual-arbitrage/
 ├── README.md                           # Project documentation and execution guide
-├── arbitrage report.pdf                # Final Capstone research paper
+├── arbitrage report.pdf                # Research report
 ├── notebooks/                          # Modular research and execution environment
 │   ├── full backtest.ipynb             # Baseline engine validation and tear sheets
 │   ├── sensitivity test.ipynb          # Multi-dimensional hyperparameter optimization
