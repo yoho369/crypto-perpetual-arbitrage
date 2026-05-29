@@ -41,8 +41,19 @@ Ensure you have Python 3.10+ installed. Clone the repository and initialize the 
 ```bash
 git clone [https://github.com/yoho369/crypto-perpetual-arbitrage.git](https://github.com/yourusername/crypto-perpetual-arbitrage.git)
 cd crypto-perpetual-arbitrage
+```
+
+For Mac/Linux:
+```bash
 python3 -m venv venv
 source venv/bin/activate
+pip install -r requirements.txt
+```
+
+For Windows (Command Prompt / PowerShell):
+```bash
+python -m venv venv
+venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
@@ -54,7 +65,13 @@ To run the backtester:
 2. **Setup:** Place the downloaded files into the `/data` folder in this repository.
 3. **Execution:** Ensure the files are named `[TOKEN]_TAGGED_MASTER.parquet`.
 
+### 3. Execution & Strategy Evaluation
+Once the environment is active and the data is loaded, you can trigger the full baseline execution engine across the entire asset universe.
 
+Run from your terminal:
+```bash
+python main.py
+```
 ---
 
 
