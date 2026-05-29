@@ -1,6 +1,6 @@
 # Arbitraging the Price Space: Funding-Adjusted Cross-Exchange Perpetual Arbitrage
 ---
-This repository contains the quantitative backtesting framework and statistical pipeline for exploiting transient, cross-exchange pricing dislocations in cryptocurrency perpetual futures. The architecture processes high-frequency Best Bid and Offer (BBO) data to validate cointegration, construct ex-ante mean-reverting signals, and evaluate strategy decay under strict execution constraints and toxic liquidity regimes.
+This repository contains the quantitative backtesting framework and statistical pipeline for exploiting transient, cross-exchange pricing dislocations in cryptocurrency perpetual futures. The architecture processes one-minute-level Best Bid and Offer (BBO) data to validate cointegration, construct ex-ante mean-reverting signals, and evaluate strategy decay under strict execution constraints and toxic liquidity regimes.
 
 
 ## Framework Overview & Core Logic
