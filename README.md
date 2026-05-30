@@ -24,7 +24,7 @@ The architecture simulates a market-neutral statistical arbitrage strategy, util
 
 * `src/data_pipeline.py`: Ingests Tardis.dev BBO and funding data, handles timestamp alignment, and structures the master evaluation matrices.
 * `src/statistical_eng.py`: Executes rolling Augmented Dickey-Fuller (ADF) tests for stationarity and fits the OU mean-reversion parameters.
-* `src/backtest_eng.py`: Event-driven state machine simulating taker-taker execution, transaction slippage, EV gating, and exit routing.
+* `src/backtest_eng.py`: state machine simulating taker-taker execution, EV gating, and exit routing.
 * `src/evaluation.py`: Generates institutional performance arrays including Active Sharpe, Maximum Drawdown, Gain-to-Pain (G2P) ratio, and empirical win rates.
 
 ---
