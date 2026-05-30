@@ -121,5 +121,26 @@ crypto-perpetual-arbitrage/
     ├── instrument_spec_history.csv     # Exchange-specific derivative parameters
     ├── *_TAGGED_MASTER.parquet         # Merged and normalized execution matrices (Git-ignored)
     └── *_bbo.csv                       # Level-1 Best Bid/Offer snapshots
+```
 
+---
+
+## Interesting Findings
+
+Below highlights some interesting findings (check the report for a more detailed discussions):
+
+#### 1. The Edge of Funding Normalization (Naive vs. OU Framework)
+Relying on raw price spreads (Naive Z-Score) exposes the strategy to deterministic funding drift, resulting in toxic false-positive executions. By deploying the funding-normalized OU $s$-score at a $4.0\sigma$ conviction threshold, the engine systematically filters these traps. 
+
+* **Result:** In the BTC example, the OU framework slashed the Maximum Drawdown by nearly 60% and expanded the Gain-to-Pain ratio to 2.53, vastly outperforming the unadjusted naive baseline.
+
+#### 2. Tail-Risk Truncation via Microstructure Guards
+The execution engine proves that while unconstrained statistical arbitrage succeeds in deep-liquidity anchors (BTC, AVAX), it fails in fragmented, long-tail assets (KAITO) due to  and localized order book anomalies.
+
+* **Result:** The introduction of Bid-Ask Illiquidity Guards successfully truncated this tail risk. For KAITO, a 10% guard prevented over 100 toxic entries, slashing the cumulative strategy loss from a -1,896 bps down to  -120 bps.
+
+#### 3. Out-of-Sample (OOS) Alpha Persistence
+To eliminate over-fitting, the strategy was subjected to a 2-month OSS test from 2026 data using simple calibrations derived from the 2025 training data. 
+
+* **Result:** The alpha persisted on unseen data. For example, **AVAX** achieved a perfect win rate, while **BERA** captured over 336 bps** of net yield with a **78.3% Win Rate**. 
 
