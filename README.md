@@ -142,5 +142,5 @@ The backtest implies that some simple proxy for illiquidity and anomalies like a
 #### 3. Out-of-Sample (OOS) Alpha Persistence
 To mitigate over-fitting, the strategy was subjected to a 2-month OSS test from 2026 data using simple calibrations derived from the 2025 training data. 
 
-**Result:** The alpha persisted on unseen data. For example, **AVAX** achieved a perfect win rate, while **BERA** captured over 336 bps of net yield with a **78.3% Win Rate**. 
+**Result:** The alpha persisted on unseen data. For example, **AVAX** achieved a perfect win rate, while **BERA** captured over 336 bps of net yield with a 78.3% Win Rate. 
 
