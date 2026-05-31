@@ -13,7 +13,7 @@ The architecture simulates a market-neutral statistical arbitrage strategy, util
 
 1. **Price Normalization (Funding-Adjusted Space)**
    * Strips funding rate accrual from raw contract prices to isolate pure price-space dislocations and ensure parity across different exchanges.
-2. **Rolling Ex-Ante $s$-score (Signal Engine)**
+2. **Rolling Ex-Ante $S$-Score (Signal Engine)**
    * Models the cross-exchange spread using an Ornstein-Uhlenbeck (OU) process, discretized via a 1440-minute rolling AR(1) regression. This generates dynamic, standardized $s$-scores completely free of look-ahead bias.
 3. **The Executable EV Gate (Entry Logic)**
    * Restricts market entries to structural extremes (e.g., $|s| \ge 4.0$). Entry is bound by an Expected Value (EV) threshold to ensure theoretical profitability survives transaction friction:
@@ -127,7 +127,7 @@ crypto-perpetual-arbitrage/
 
 ---
 
-## Interesting Findings
+## Some Interesting Findings
 
 Below highlights some interesting findings (check the [report](https://github.com/yoho369/crypto-perpetual-arbitrage/blob/main/arbitrage%20report.pdf) for a more detailed discussion):
 
@@ -145,4 +145,12 @@ The backtest implies that some simple proxy for illiquidity and anomalies like a
 To mitigate over-fitting, the strategy was subjected to a 2-month OSS test from 2026 data using simple calibrations derived from the 2025 training data. 
 
 **Result:** The alpha persisted on unseen data. For example, **AVAX** achieved a perfect win rate, while **BERA** captured over 336 bps of net yield with a 78.3% Win Rate. 
+
+---
+
+
+
+
+
+
 
