@@ -1,6 +1,11 @@
 # Arbitraging the Price Space: Funding-Adjusted Cross-Exchange Perpetual Arbitrage
 ---
-This repository contains the quantitative backtesting framework and statistical pipeline for exploiting transient, cross-exchange pricing dislocations in cryptocurrency perpetual futures. The architecture processes one-minute-level Best Bid and Offer (BBO) data to validate cointegration, construct ex-ante mean-reverting signals, and evaluate strategy decay under strict execution constraints and toxic liquidity regimes.
+
+This study diverges from standard cash-and-carry basis trading and focuses on arbitraging cross-exchange perps on the price space, which is less frequently discussed in the academic literature.
+
+This repository contains the quantitative backtesting framework and statistical pipeline for exploiting transient, cross-exchange pricing dislocations in cryptocurrency perpetual futures. The  processes one-minute-level Best Bid and Offer (BBO) data to validate cointegration, construct ex-ante mean-reverting signals, and evaluate strategy decay under execution constraints and toxic liquidity regimes.
+
+A study diverging from standard cash-and-carry basis trading and focusing on arbitraging cross-exchange perps on the price space
 
 ## The full research report is available [HERE](https://github.com/yoho369/crypto-perpetual-arbitrage/blob/main/arbitrage%20report.pdf) (last updated on 31/05/2026)
 
@@ -14,7 +19,7 @@ The architecture simulates a market-neutral statistical arbitrage strategy, util
 2. **Rolling Ex-Ante $s$-score (Signal Engine)**
    * Models the cross-exchange spread using an Ornstein-Uhlenbeck (OU) process, discretized via a 1440-minute rolling AR(1) regression. This generates dynamic, standardized $s$-scores completely free of look-ahead bias.
 3. **The Executable EV Gate (Entry Logic)**
-   * Restricts market entries to structural extremes (e.g., $|s| \ge 4.0$). Entry is strictly bound by an Expected Value (EV) threshold to ensure theoretical profitability survives transaction friction:
+   * Restricts market entries to structural extremes (e.g., $|s| \ge 4.0$). Entry is bound by an Expected Value (EV) threshold to ensure theoretical profitability survives transaction friction:
      $$\text{Net EV} = \text{Gross EV} - \text{Round-Trip Fees} - \text{Expected Spread}$$
 4. **Execution Simulation & Illiquidity Guards**
    * Implements Bid-Ask Illiquidity Guards (e.g., 5.0, 10.0, 20.0 bps thresholds) to explicitly block trade execution during toxic, low-depth order book regimes (phantom liquidity).
