@@ -1,7 +1,6 @@
 # Arbitraging the Price Space: Funding-Adjusted Cross-Exchange Perpetual Arbitrage
 ---
-
-This study diverges from standard cash-and-carry basis trading and focuses on arbitraging cross-exchange perps on the price space, which is less frequently discussed in the academic literature.
+Our study diverges from common cash-and-carry basis trading and focuses on arbitraging cross-exchange crypto perps on the price space, which is less frequently discussed in the academic literature.
 
 This repository contains the quantitative backtesting framework and statistical pipeline for exploiting transient, cross-exchange pricing dislocations in cryptocurrency perpetual futures. The  processes one-minute-level Best Bid and Offer (BBO) data to validate cointegration, construct ex-ante mean-reverting signals, and evaluate strategy decay under execution constraints and toxic liquidity regimes.
 
