@@ -2,7 +2,7 @@
 ---
 This repository contains the quantitative backtesting framework and statistical pipeline for exploiting transient, cross-exchange pricing dislocations in cryptocurrency perpetual futures. The architecture processes one-minute-level Best Bid and Offer (BBO) data to validate cointegration, construct ex-ante mean-reverting signals, and evaluate strategy decay under strict execution constraints and toxic liquidity regimes.
 
-## The full research report is available [HERE](https://github.com/yoho369/crypto-perpetual-arbitrage/blob/main/arbitrage%20report.pdf) (last updated on 30/05/2026)
+## The full research report is available [HERE](https://github.com/yoho369/crypto-perpetual-arbitrage/blob/main/arbitrage%20report.pdf) (last updated on 31/05/2026)
 
 #### Framework Overview & Core Logic
 
