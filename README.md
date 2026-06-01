@@ -134,7 +134,7 @@ Below highlights some interesting findings (check the [report](https://github.co
 #### 1. The Edge of Funding Normalization (Naive vs. OU Framework)
 Relying on raw price spreads (Naive Z-Score) exposes the strategy to deterministic funding drift and false-positive executions. By deploying the funding-normalized OU $s$-score at a $4.0\sigma$ conviction threshold, the engine systematically filters these traps. 
 
-**Result:** In the **BTC** example, the OU framework slashed the Maximum Drawdown by nearly 60% and expanded the Gain-to-Pain ratio to 2.53, vastly outperforming the unadjusted naive baseline.
+**Result:** For example, in the case of **BTC**, the OU framework slashed the Maximum Drawdown by nearly 60% and expanded the Gain-to-Pain ratio to 2.53, vastly outperforming the unadjusted naive baseline. Similar effects are obbserved among all tokens examined.
 
 #### 2. Tail-Risk Truncation via Microstructure Guards
 The backtest implies that some simple proxy for illiquidity and anomalies like aggreate bid-ask spread magnitudes in both exchanges can help filter toxic entries.
