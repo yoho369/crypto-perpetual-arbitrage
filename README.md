@@ -1,8 +1,10 @@
 # Arbitraging the Price Space: Funding-Adjusted Cross-Exchange Perpetual Arbitrage
 ---
-This repository contains the quantitative backtesting framework and statistical pipeline for exploiting transient, cross-exchange pricing dislocations in cryptocurrency perpetual futures. The architecture processes one-minute-level Best Bid and Offer (BBO) data to validate cointegration, construct ex-ante mean-reverting signals, and evaluate strategy decay under strict execution constraints and toxic liquidity regimes.
+Our study diverges from common cash-and-carry basis trading and focuses on arbitraging cross-exchange crypto perps on the price space, which is less frequently discussed in the academic literature.
 
-## The full research report is available [HERE](https://github.com/yoho369/crypto-perpetual-arbitrage/blob/main/arbitrage%20report.pdf) (last updated on 30/05/2026)
+This repository contains the quantitative backtesting framework and statistical pipeline for exploiting transient, cross-exchange pricing dislocations in cryptocurrency perpetual futures. The full structure processes one-minute-level Best Bid and Offer (BBO) data to validate cointegration, construct ex-ante mean-reverting signals, and evaluate strategy decay under execution constraints and toxic liquidity regimes.
+
+### The full research report is available [HERE](https://github.com/yoho369/crypto-perpetual-arbitrage/blob/main/arbitrage%20report.pdf) (last updated on 31/05/2026)
 
 #### Framework Overview & Core Logic
 
@@ -11,10 +13,10 @@ The architecture simulates a market-neutral statistical arbitrage strategy, util
 
 1. **Price Normalization (Funding-Adjusted Space)**
    * Strips funding rate accrual from raw contract prices to isolate pure price-space dislocations and ensure parity across different exchanges.
-2. **Rolling Ex-Ante $s$-score (Signal Engine)**
+2. **Rolling Ex-Ante $S$-Score (Signal Engine)**
    * Models the cross-exchange spread using an Ornstein-Uhlenbeck (OU) process, discretized via a 1440-minute rolling AR(1) regression. This generates dynamic, standardized $s$-scores completely free of look-ahead bias.
 3. **The Executable EV Gate (Entry Logic)**
-   * Restricts market entries to structural extremes (e.g., $|s| \ge 4.0$). Entry is strictly bound by an Expected Value (EV) threshold to ensure theoretical profitability survives transaction friction:
+   * Restricts market entries to structural extremes (e.g., $|s| \ge 4.0$). Entry is bound by an Expected Value (EV) threshold to ensure theoretical profitability survives transaction friction:
      $$\text{Net EV} = \text{Gross EV} - \text{Round-Trip Fees} - \text{Expected Spread}$$
 4. **Execution Simulation & Illiquidity Guards**
    * Implements Bid-Ask Illiquidity Guards (e.g., 5.0, 10.0, 20.0 bps thresholds) to explicitly block trade execution during toxic, low-depth order book regimes (phantom liquidity).
@@ -125,7 +127,7 @@ crypto-perpetual-arbitrage/
 
 ---
 
-## Interesting Findings
+## Some Interesting Findings
 
 Below highlights some interesting findings (check the [report](https://github.com/yoho369/crypto-perpetual-arbitrage/blob/main/arbitrage%20report.pdf) for a more detailed discussion):
 
@@ -143,4 +145,12 @@ The backtest implies that some simple proxy for illiquidity and anomalies like a
 To mitigate over-fitting, the strategy was subjected to a 2-month OSS test from 2026 data using simple calibrations derived from the 2025 training data. 
 
 **Result:** The alpha persisted on unseen data. For example, **AVAX** achieved a perfect win rate, while **BERA** captured over 336 bps of net yield with a 78.3% Win Rate. 
+
+---
+
+
+
+
+
+
 
