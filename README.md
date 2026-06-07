@@ -85,8 +85,7 @@ stat_eng.execute_all_diagnostics()
 ```
 ### 4. Interactive Exploration (Standalone Notebooks)
 
-For modular execution, step-by-step code review, and deeper data exploration, we have provided standalone Jupyter Notebooks in the notebooks/ directory. T
-hese are ideal for running individual components of the research pipeline:
+For modular execution, step-by-step code review, and deeper data exploration, we have provided standalone Jupyter Notebooks in the notebooks/ directory. These are ideal for running individual components of the research pipeline:
 * **Data Engineering:** `[TOKEN] data cleaning and master file construction.ipynb`
 * **Econometric Modeling:** `[TOKEN] statistical studies.ipynb`
 * **Baseline Engine Validation:** `full backtest.ipynb`
@@ -133,15 +132,15 @@ Below highlights some interesting findings (check the [report](https://github.co
 #### 1. The Edge of Funding Normalization (Naive vs. OU Framework)
 Relying on raw price spreads (Naive Z-Score) exposes the strategy to deterministic funding drift and false-positive executions. By deploying the funding-normalized OU $s$-score at a $4.0\sigma$ conviction threshold, the engine systematically filters these traps. 
 
-**Result:** For example, in the case of **BTC**, the OU framework slashed the Maximum Drawdown by nearly 60% and expanded the Gain-to-Pain ratio to 2.53, vastly outperforming the unadjusted naive baseline. Similar effects are obbserved among all tokens examined.
+**Result:** For example, in the case of **BTC**, the OU framework slashed the Maximum Drawdown by nearly 60% and expanded the Gain-to-Pain ratio to 2.53, vastly outperforming the unadjusted naive baseline. Similar effects are observed among all tokens examined.
 
 #### 2. Tail-Risk Truncation via Microstructure Guards
-The backtest implies that some simple proxy for illiquidity and anomalies like aggreate bid-ask spread magnitudes in both exchanges can help filter toxic entries.
+The backtest implies that some simple proxy for illiquidity and anomalies like aggregate bid-ask spread magnitudes in both exchanges can help filter toxic entries.
 
 **Result:** For **KAITO**, a 10% guard prevented over 100 toxic entries, slashing the cumulative strategy loss from a -1,896 bps down to  -120 bps.
 
 #### 3. Out-of-Sample (OOS) Alpha Persistence
-To mitigate over-fitting, the strategy was subjected to a 2-month OSS test from 2026 data using simple calibrations derived from the 2025 training data. 
+To mitigate over-fitting, the strategy was subjected to a 2-month OOS test from 2026 data using simple calibrations derived from the 2025 training data. 
 
 **Result:** The alpha persisted on unseen data. For example, **AVAX** achieved a perfect win rate, while **BERA** captured over 336 bps of net yield with a 78.3% Win Rate. 
 
